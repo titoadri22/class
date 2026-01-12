@@ -74,3 +74,61 @@ const allnumberSpread = [...numbers, ...numbers2] //otra forma de concatenar tod
 //   return pedidos
 
 // }
+
+
+
+// ITERACIÓN Y RECORRIDO DE ARRAYS
+
+
+// COMO RECORRER ARRAYS 
+
+
+// CON WHILE
+let frutas = ['🍎', '🍌', '🍓']
+let i = 0 // lo usaremos como índice
+
+while (i < frutas.length) {
+  console.log(frutas[i]) // imprime el elemento en la posición i
+  i++ // incrementamos el índice en 1 para la siguiente iteración
+}
+
+// CON FOR
+let frutas = ['🍎', '🍌', '🍓']
+
+for (let i = 0; i < frutas.length; i++) {
+  console.log(frutas[i]) // imprime el elemento en la posición i
+}
+
+let frutas = ['🍎', '🍌', '🍓']
+
+for (let i = frutas.length - 1; i >= 0; i--) {
+  console.log(frutas[i]) // imprime el elemento en la posición i
+}
+
+
+//FOR OF
+let frutas = ['🍎', '🍌', '🍓']
+
+for (const fruta of frutas){
+    console.log(fruta)
+}
+
+// con foreach
+let frutas = ['🍎', '🍌', '🍓']
+
+frutas.forEach(function(el, index){
+console.log('index: ' + index)
+console.log(el)
+})
+
+
+//con arrow functions
+let frutas = ['🍎', '🍌', '🍓']
+
+frutas.forEach(el =>{
+    console.log(el)
+})
+
+
+
+
