@@ -1,6 +1,6 @@
 //explicacion arrays JavaScript
 
-const numeros = [1,2,3]
+const numeros = [1, 2, 3]
 
 numeros[0] //numero 1 
 numeros[1] //numero 2 
@@ -26,7 +26,7 @@ numeros[1] = 12 // se cambiara el 2(posicion 1) por el 12
 
 //----- METODOS ARRAYS -----
 
- const frutas = ['manzana', 'pera', 'platano', 'fresa']
+const frutas = ['manzana', 'pera', 'platano', 'fresa']
 
 frutas.length // 4
 
@@ -44,13 +44,13 @@ frutas1.shift() //elimina y devuelve el primer elemento de la array
 
 frutas1.unshift('piña') //añade al principio no al final
 
-frutas1.push('mango','aguacate') //añadir mas de 1 elemento
+frutas1.push('mango', 'aguacate') //añadir mas de 1 elemento
 
 
 
 //------ CONCATENAR ARRAYS ------
 
-const numbers = [1 ,2 ,3]
+const numbers = [1, 2, 3]
 const numbers2 = [4, 5]
 
 const allnumb = numbers.concat(numbers2) // concatena los arrays
@@ -109,24 +109,24 @@ for (let i = frutas.length - 1; i >= 0; i--) {
 //FOR OF
 let frutas = ['🍎', '🍌', '🍓']
 
-for (const fruta of frutas){
-    console.log(fruta)
+for (const fruta of frutas) {
+  console.log(fruta)
 }
 
 // con foreach
 let frutas = ['🍎', '🍌', '🍓']
 
-frutas.forEach(function(el, index){
-console.log('index: ' + index)
-console.log(el)
+frutas.forEach(function (el, index) {
+  console.log('index: ' + index)
+  console.log(el)
 })
 
 
 //con arrow functions
 let frutas = ['🍎', '🍌', '🍓']
 
-frutas.forEach(el =>{
-    console.log(el)
+frutas.forEach(el => {
+  console.log(el)
 })
 
 
@@ -234,7 +234,7 @@ console.log(firstNegativeNumberIndex) // -> -1
 
 // ORDENAR ARRAYS
 
-const nums =[5, 10, 2, 25, 7]
+const nums = [5, 10, 2, 25, 7]
 
 
 //sort ordena por valor como cadena de texto no por valor numerico
@@ -245,7 +245,7 @@ nums.sort()
 // return a - b
 // si return positivo -> b delante de a
 // si devuelve 0 -> estan en la misma pos
-nums.sort(function(a,b){
+nums.sort(function (a, b) {
   //manera ascendente
   return a - b
   //manera descendiente 
@@ -255,9 +255,9 @@ nums.sort(function(a,b){
 // tambien se pde hacer asi para simplificar codigo
 
 // asc menor a mayor
-nums.sort((a,b) => a - b)
+nums.sort((a, b) => a - b)
 // desc mayor a menor
-nums.sort((a,b) => b - a)
+nums.sort((a, b) => b - a)
 
 // sort() y toSorted()
 // sort() modifica el array original y toSorted() no lo modifica
@@ -323,7 +323,7 @@ console.log(doubleNumbers) // [2, 4, 6]
 //O podríamos crear un array con la longitud de cada 
 // cadena de texto de un array de cadenas:
 
-const strings2= ['hola', 'javascript', 'midu', 'programación']
+const strings2 = ['hola', 'javascript', 'midu', 'programación']
 
 const stringsLength = strings2.map((string) => string.length)
 
@@ -374,7 +374,11 @@ console.log(sum) // 6
 
 // como crear una matriz
 
-const matriz =[
+<<<<<<< HEAD
+const matriz = [
+=======
+const matriz = [
+>>>>>>> 1f10d9a (Add objects section: gameSystem example, property access, and nested objects)
   [1, 2, 3],
   [4, 5, 6]
 ]
@@ -461,15 +465,27 @@ if (
 
 
 function findJavaScript(matrix) {
-  
-  for (let i = 0; i < matrix.length; i++){
-    for (let j = 0; j < matrix[i].length; j++){
-      if(matrix[i][j] === "JavaScript"){
-        return [i,j]
-      } 
+<<<<<<< HEAD
+
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix[i].length; j++) {
+      if (matrix[i][j] === "JavaScript") {
+        return [i, j]
+      }
     }
   }
-          return [-1,-1]
+  return [-1, -1]
+=======
+
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix[i].length; j++) {
+      if (matrix[i][j] === "JavaScript") {
+        return [i, j]
+      }
+    }
+  }
+  return [-1, -1]
+>>>>>>> 1f10d9a (Add objects section: gameSystem example, property access, and nested objects)
 
 }
 
@@ -511,14 +527,101 @@ function minAndMaxWord(words) {
   let minIndex = 0
   let maxIndex = 0
 
-  for(let i = 1; i < words.length; i++){
+  for (let i = 1; i < words.length; i++) {
 
-    if(words[i] < words[minIndex]){
+    if (words[i] < words[minIndex]) {
       minIndex = i;
     }
-    if(words[i] > words[maxIndex]){
+    if (words[i] > words[maxIndex]) {
       maxIndex = i;
     }
   }
   return [minIndex, maxIndex]
 }
+
+
+// OBJETOS
+
+const gameSystem = {
+  name: "PS5",
+  price: 299,
+  company: "Sony",
+  games: ['God of war', 'Spiderman', 'Ratchet and Clank'],
+  specs: {
+    cpu: "AMD Ryzen 9 5900X",
+    gpu: "NVIDIA GeForce RTX 3080",
+    ram: "16GB",
+    storage: "1TB SSD"
+  },
+  runGame(game) {
+    console.log(game)
+  }
+}
+
+// para acceder a propiedades
+
+console.log(gameSystem.name)
+console.log(gameSystem.company)
+console.log(gameSystem.specs.cpu)
+console.log(gameSystem.games[1]) // -> Spiderman
+console.log(gameSystem.specs.gpu) // -> NVIDIA GeForce RTX 3080
+
+
+// otra forma de acceder a los metodos
+
+const propertyName = 'company'
+
+gameSystem[propertyName] // -> Sony
+
+
+// otro ejemplo
+
+const persona = {
+  name: 'Dani',
+  age: 30,
+  isWorking: true,
+  family: ['Miguel', 'Maria'], // array
+  address: { // otro objeto
+    street: 'Calle de la piruleta',
+    number: 13,
+    city: 'Barcelona'
+  }
+}
+
+// otra forma de crear un objeto
+
+const persona1 = {
+  name: 'Dani',
+  age: 30,
+  isWorking: true,
+  family: ['Miguel', 'Maria'],
+  address: {
+    street: 'Calle de la piruleta',
+    number: 13,
+    city: 'Barcelona'
+  },
+  walk: function () { // <- método
+    console.log('Estoy caminando')
+  }
+}
+
+// const persona = { 'full name': 'Dani' }
+
+// console.log(persona['full name']) // -> Dani
+
+// // ❌ no puedes hacer esto
+// // persona.full name
+
+
+// const persona = {
+//   name: 'Dani',
+//   walk: function () {
+//     console.log('Estoy caminando')
+//   }
+// }
+
+// persona.walk() // -> Estoy caminando
+
+// let method = 'walk'
+// persona[method]() // -> Estoy caminando
+
